@@ -17,7 +17,7 @@ public class tp01q01 {
     public static boolean isPalindrome(String sentence) {
         /*
          * A boolean function that calculates if a 
-         * sentence is a palindrome or not
+         * sentence is a palindrome or not.
          */
 
         String invertedSentence = "";

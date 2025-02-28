@@ -19,7 +19,7 @@ public class tp01q03 {
     public static String caesarsCipher(String sentence, int key) {
         /*
          * A String function that takes a key and a sentence
-         * and applies a Caesar's Cipher on it
+         * and applies a Caesar's Cipher on it.
          */
 
         String chipheredSentence = "";
