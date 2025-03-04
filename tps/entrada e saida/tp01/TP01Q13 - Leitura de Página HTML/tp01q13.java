@@ -66,90 +66,83 @@ public class tp01q13 {
         String htmlString = getHtml(sentenceTwo);
         // htmlString = htmlString.toLowerCase();
         //sentenceOne = sentenceOne.toLowerCase();
+        String consonants = "bcdfghjklmnpqrstvwxyz";
 
         for (int index = 0; index < htmlString.length(); index++) {
-            //Normal vowels counter
-            if (htmlString.charAt(index) == 'a') {
-                aCounter ++;
-            }
-            if (htmlString.charAt(index) == 'e') {
-                eCounter ++;
-            }
-            if (htmlString.charAt(index) == 'i') {
-                iCounter ++;
-            }
-            if (htmlString.charAt(index) == 'o') {
-                oCounter ++;
-            }
-            if (htmlString.charAt(index) == 'u') {
-                uCounter ++;
-            }
+            char currentChar = htmlString.charAt(index);
 
-            //Vowels with acute counter
-            if (htmlString.charAt(index) == 'á') {
-                aAcuteCounter ++;
-            }
-            if (htmlString.charAt(index) == 'é') {
-                eAcuteCounter ++;
-            }
-            if (htmlString.charAt(index) == 'í') {
-                iAcuteCounter ++;
-            }
-            if (htmlString.charAt(index) == 'ó') {
-                oAcuteCounter ++;
-            }
-            if (htmlString.charAt(index) == 'ú') {
-                uAcuteCounter ++;
-            }
-
-            //Vowels with crasis counter
-            if (htmlString.charAt(index) == 'à') {
-                aCrasisCounter ++;
-            }
-            if (htmlString.charAt(index) == 'è') {
-                eCrasisCounter ++;
-            }
-            if (htmlString.charAt(index) == 'ì') {
-                iCrasisCounter ++;
-            }
-            if (htmlString.charAt(index) == 'ò') {
-                oCrasisCounter ++;
-            }
-            if (htmlString.charAt(index) == 'ù') {
-                uCrasisCounter ++;
-            }
-
-            //Vowels with tilde counter
-            if (htmlString.charAt(index) == 'ã') {
-                aTildeCounter ++;
-            }
-            if (htmlString.charAt(index) == 'õ') {
-                oTildeCounter ++;
-            }
-
-            //Vowels with circumflex counter
-            if (htmlString.charAt(index) == 'â') {
-                aCircumflexCounter ++;
-            }
-            if (htmlString.charAt(index) == 'ê') {
-                eCircumflexCounter ++;
-            }
-            if (htmlString.charAt(index) == 'î') {
-                iCircumflexCounter ++;
-            }
-            if (htmlString.charAt(index) == 'ô') {
-                oCircumflexCounter ++;
-            }
-            if (htmlString.charAt(index) == 'û') {
-                uCircumflexCounter ++;
-            }
-
-            //Consonant counter
-            String consonants = "bcdfghjklmnpqrstvwxyz";
-            String possibleConsonant = Character.toString(htmlString.charAt(index));
-
-            if (consonants.contains(possibleConsonant)) {
-                consonantCounter ++;
+            switch (currentChar) {
+                case 'a':
+                    aCounter++;
+                    break;
+                case 'e':
+                    eCounter++;
+                    break;
+                case 'i':
+                    iCounter++;
+                    break;
+                case 'o':
+                    oCounter++;
+                    break;
+                case 'u':
+                    uCounter++;
+                    break;
+                case '\u00E1': // á
+                    aAcuteCounter++;
+                    break;
+                case '\u00E9': // é
+                    eAcuteCounter++;
+                    break;
+                case '\u00ED': // í
+                    iAcuteCounter++;
+                    break;
+                case '\u00F3': // ó
+                    oAcuteCounter++;
+                    break;
+                case '\u00FA': // ú
+                    uAcuteCounter++;
+                    break;
+                case '\u00E0': // à
+                    aCrasisCounter++;
+                    break;
+                case '\u00E8': // è
+                    eCrasisCounter++;
+                    break;
+                case '\u00EC': // ì
+                    iCrasisCounter++;
+                    break;
+                case '\u00F2': // ò
+                    oCrasisCounter++;
+                    break;
+                case '\u00F9': // ù
+                    uCrasisCounter++;
+                    break;
+                case '\u00E3': // ã
+                    aTildeCounter++;
+                    break;
+                case '\u00F5': // õ
+                    oTildeCounter++;
+                    break;
+                case '\u00E2': // â
+                    aCircumflexCounter++;
+                    break;
+                case '\u00EA': // ê
+                    eCircumflexCounter++;
+                    break;
+                case '\u00EE': // î
+                    iCircumflexCounter++;
+                    break;
+                case '\u00F4': // ô
+                    oCircumflexCounter++;
+                    break;
+                case '\u00FB': // û
+                    uCircumflexCounter++;
+                    break;
+                default:
+                    if (consonants.contains(Character.toString(currentChar))) {
+                        consonantCounter++;
+                    }
+                    break;
             }
         }
 
