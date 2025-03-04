@@ -26,6 +26,11 @@ import java.util.Scanner;
 
 public class tp01q13 {
     public static String getHtml(String endereco){
+        /*
+         * A String function that gets all the html content from a page
+         * using a link, then returns all this content for us. 
+         */
+
         URL url;
         InputStream is = null;
         BufferedReader br;
@@ -56,6 +61,12 @@ public class tp01q13 {
     }
 
     public static String htmlGeneralCounter (String sentenceOne, String sentenceTwo) {
+        /*
+         * A String function that receives two sentences, the first is the name of the page,
+         * the second is all the content from a html. This function counts a lot of things,
+         * and in the final, return everything in the ideal format for us.  
+         */
+
         int aCounter = 0, eCounter = 0, iCounter = 0, oCounter = 0, uCounter = 0, 
         aAcuteCounter = 0, eAcuteCounter = 0, iAcuteCounter = 0, oAcuteCounter = 0, uAcuteCounter = 0,
         aCrasisCounter = 0, eCrasisCounter = 0, iCrasisCounter = 0, oCrasisCounter = 0, uCrasisCounter = 0, 
@@ -182,6 +193,11 @@ public class tp01q13 {
     }
 
     public static void main(String[] args) {
+        /*
+         * A Main function that reads two lines, calls the counter for they,
+         * and returns a String with a lot of counters.
+         */
+
         Scanner scanner = new Scanner(System.in);
         String lineOne = scanner.nextLine();
 
