@@ -12,7 +12,7 @@
 #include <locale.h>
 #include <wchar.h>
 
-bool isPalindrome(wchar_t sentence[]) {
+bool isPalindrome(char sentence[]) {
     /*
     * An boolean function that calculates if a 
     * sentence is a palindrome or not
@@ -21,9 +21,9 @@ bool isPalindrome(wchar_t sentence[]) {
    int right = strlen(sentence) - 1;
 
    while (left < right) {
-       printf("left: %c\n", sentence[left]);
-       printf("right: %c\n", sentence[right]);
-       if ((unsigned char)sentence[left] != (unsigned char)sentence[right]) {
+       //printf("left: %c\n", sentence[left]);
+       //printf("right: %c\n", sentence[right]);
+       if (sentence[left] != sentence[right]) {
            return false;
        }
        left++;

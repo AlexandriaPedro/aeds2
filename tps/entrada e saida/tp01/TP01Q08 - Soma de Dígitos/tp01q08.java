@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 /*
  * Soma de Dígitos - Crie um método recursivo que
  * recebe um número inteiro como parâmetro e retorna
@@ -28,12 +31,16 @@
          * and returns the added number as output.
          */
 
-        Integer number = MyIO.readInt();
+        Scanner scanner = new Scanner(System.in);
+        String line = scanner.nextLine();
 
-        while (number instanceof Integer) {
-            MyIO.println(adder(number));
+        while (!line.equals("FIM")) {
+            int number = Integer.parseInt(line);
+            System.out.println(adder(number));
 
-            number = MyIO.readInt();
+            line = scanner.nextLine();
         }
+
+        scanner.close();
     }
  }
