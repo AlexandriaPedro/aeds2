@@ -14,7 +14,7 @@
 #include <locale.h>
 #include <wchar.h>
 
-char* sentenceInverterRecursive(char *sentence, int index, char *invertedSentence) {
+char* sentenceInverterRecursive(char sentence[], int index, char invertedSentence[]) {
     /*
     * A String function that takes a sentence,
     * inverts it, and returns it.
@@ -23,6 +23,7 @@ char* sentenceInverterRecursive(char *sentence, int index, char *invertedSentenc
     //base case:
     if (index == strlen(sentence)) {
         //printf("Entrei aq no IF");
+        invertedSentence[index]  = '\0';
         return invertedSentence;
     }
 
@@ -44,11 +45,10 @@ int main() {
     * the inverted line readed.
     */
 
-    setlocale(LC_ALL, "pt_BR.UTF-8");
-
     char line[1000];
+    scanf("%s", line);
 
-    while (fgets(line, sizeof(line), stdin) != NULL) {
+    while (strcmp(line, "FIM") != 0) {
         char invertedSentence[1000];
 
         line[strcspn(line, "\n")] = '\0';
@@ -56,6 +56,8 @@ int main() {
         if (strcmp(line, "FIM") == 0) break;
 
         printf("%s\n", sentenceInverterRecursive(line, 0, invertedSentence));
+
+        scanf("%s", line);
     }
 
     return 0;
